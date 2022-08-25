@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanapat Nantasiriyothin 6230300435</title>
+</head>
+<body>
+    <button onclick="showMenu()"> Show!!!!</button>
+</body>
+
+<script>
+
+    var check = true;
+    const id1 = {id:1,name:'Boncafe Espresso Ground Coffee',price:100,img:'https://www.top10.in.th/wp-content/uploads/2020/09/%E0%B9%80%E0%B8%A1%E0%B8%A5%E0%B9%87%E0%B8%94%E0%B8%81%E0%B8%B2%E0%B9%81%E0%B8%9F-Boncafe-Espresso-Ground-Coffee.jpg'}
+    const id2 = {id:2,name:'Doi Chang',price:100,img:'https://www.top10.in.th/wp-content/uploads/2020/09/%E0%B9%80%E0%B8%A1%E0%B8%A5%E0%B9%87%E0%B8%94%E0%B8%81%E0%B8%B2%E0%B9%81%E0%B8%9F-Doi-Chang-Professional-Ground-CoffeeMedium-to-Dark.jpg'}
+    const id3 = {id:3,name:'DoiTung Drip Coffee Medium Roast',price:150,img:'https://www.top10.in.th/wp-content/uploads/2020/09/%E0%B9%80%E0%B8%A1%E0%B8%A5%E0%B9%87%E0%B8%94%E0%B8%81%E0%B8%B2%E0%B9%81%E0%B8%9F-DoiTung-Drip-Coffee-Medium-Roast.jpg'}
+    const id4 = {id:4,name:'Mezzo Coffee Bean',price:200,img:'https://www.top10.in.th/wp-content/uploads/2020/09/%E0%B9%80%E0%B8%A1%E0%B8%A5%E0%B9%87%E0%B8%94%E0%B8%81%E0%B8%B2%E0%B9%81%E0%B8%9F-Mezzo-Coffee-Bean.jpg'}
+    const id5 = {id:5,name:'SUZUKI COFFEE Premium Blend',price:100,img:'https://www.top10.in.th/wp-content/uploads/2020/09/%E0%B9%80%E0%B8%A1%E0%B8%A5%E0%B9%87%E0%B8%94%E0%B8%81%E0%B8%B2%E0%B9%81%E0%B8%9F-%E0%B8%81%E0%B8%B2%E0%B9%81%E0%B8%9F%E0%B8%84%E0%B8%B1%E0%B9%88%E0%B8%A7%E0%B8%9A%E0%B8%94-SUZUKI-COFFEE-Premium-Blend-%E0%B8%AA%E0%B8%B9%E0%B8%95%E0%B8%A3%E0%B9%80%E0%B8%82%E0%B9%89%E0%B8%A1.jpg'}
+    const id6 = {id:6,name:'Phou phieng Drip Coffee 100% Premium Arabica',price:150,img:'https://www.top10.in.th/wp-content/uploads/2020/09/%E0%B9%80%E0%B8%A1%E0%B8%A5%E0%B9%87%E0%B8%94%E0%B8%81%E0%B8%B2%E0%B9%81%E0%B8%9F-PhouphiengDrip-Coffee-100-Premium-Arabica.jpg'}
+    const id7 = {id:7,name:'Espresso Pure by NLCOFFEE',price:180,img:'https://www.top10.in.th/wp-content/uploads/2020/09/%E0%B9%80%E0%B8%A1%E0%B8%A5%E0%B9%87%E0%B8%94%E0%B8%81%E0%B8%B2%E0%B9%81%E0%B8%9F-Espresso-Pure-by-NLCOFFEE.jpg'}
+    const id8 = {id:8,name:'Craze Cafe Single Origin',price:170,img:'https://www.top10.in.th/wp-content/uploads/2020/09/%E0%B9%80%E0%B8%A1%E0%B8%A5%E0%B9%87%E0%B8%94%E0%B8%81%E0%B8%B2%E0%B9%81%E0%B8%9F-%E0%B8%81%E0%B8%B2%E0%B9%81%E0%B8%9F%E0%B8%9E%E0%B8%A3%E0%B8%B5%E0%B9%80%E0%B8%A1%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A1-Craze-Cafe-Single-Origin.jpg'}
+    const id9 = {id:9,name:'ILLY Classico Roasted Ground Coffee 100%',price:100,img:'https://www.top10.in.th/wp-content/uploads/2020/09/%E0%B9%80%E0%B8%A1%E0%B8%A5%E0%B9%87%E0%B8%94%E0%B8%81%E0%B8%B2%E0%B9%81%E0%B8%9F-ILLY-Classico-Roasted-Ground-Coffee-100.jpg'}
+    const id10 = {id:10,name:'Dao Coffee Arabica Premium',price:115,img:'https://www.top10.in.th/wp-content/uploads/2021/01/Dao-Coffee-Arabica-Premium-Whole-Beans-Coffee.jpg'}
+
+    const arr_menu = [id1,id2,id3,id4,id5,id6,id7,id8,id9,id10]
+    
+    
+    function showMenu(){
+        if(check)
+        {
+            const Div = document.createElement("div");
+        Div.setAttribute("id","mydiv");
+        document.body.appendChild(Div);
+        arr_menu.forEach(myFunction);
+        check = false;
+
+        }else{
+            const element = document.getElementById('mydiv')
+            element.remove();
+            check = true;
+
+        }
+       
+
+    }
+
+
+    function myFunction(value) {
+    
+        var img = document.createElement("img");
+        var p = document.createElement("p");
+        var hr = document.createElement("hr");
+        var p_de = document.createTextNode("รายการที่ : "+value.id + " ชื่อ " + value.name + " ราคา " + value.price)
+        p.appendChild(p_de)
+        
+        img.src =  value.img
+        
+        document.getElementById("mydiv").appendChild(p)
+        document.getElementById("mydiv").appendChild(img)
+        document.getElementById("mydiv").appendChild(hr)
+        // document.body.appendChild(img)
+
+    }
+
+</script>
+</html>
